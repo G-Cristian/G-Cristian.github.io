@@ -1,0 +1,111 @@
+{
+  "worldSize": {
+    "x": 320,
+    "y": 240
+  },
+  "levelSize": {
+    "left": 4,
+    "top": 4,
+    "right": 104,
+    "bottom": 204
+  },
+  "borders": [
+    {
+      "type": "border",
+      "pos": {
+        "x": 54,
+        "y": 2
+      },
+      "size": {
+        "x": 100,
+        "y": 4
+      },
+      "side": "top",
+      "rotation": 0
+    },
+    {
+      "type": "border",
+      "pos": {
+        "x": 54,
+        "y": 206
+      },
+      "size": {
+        "x": 100,
+        "y": 4
+      },
+      "side": "bottom",
+      "rotation": 0
+    },
+    {
+      "type": "border",
+      "pos": {
+        "x": 2,
+        "y": 54
+      },
+      "size": {
+        "x": 100,
+        "y": 4
+      },
+      "side": "left",
+      "rotation": 90
+    },
+    {
+      "type": "border",
+      "pos": {
+        "x": 2,
+        "y": 154
+      },
+      "size": {
+        "x": 100,
+        "y": 4
+      },
+      "side": "left",
+      "rotation": 90
+    },
+    {
+      "type": "border",
+      "pos": {
+        "x": 106,
+        "y": 54
+      },
+      "size": {
+        "x": 100,
+        "y": 4
+      },
+      "side": "right",
+      "rotation": 90
+    },
+    {
+      "type": "border",
+      "pos": {
+        "x": 106,
+        "y": 154
+      },
+      "size": {
+        "x": 100,
+        "y": 4
+      },
+      "side": "right",
+      "rotation": 90
+    }
+  ],
+  "ball": {
+    "type": "ball",
+    "pos": {
+      "x": 60,
+      "y": 184
+    },
+    "radius": 3
+  },
+  "player": {
+    "type": "player",
+    "pos": {
+      "x": 54,
+      "y": 190
+    },
+    "size": {
+      "x": 24,
+      "y": 4
+    }
+  }
+}

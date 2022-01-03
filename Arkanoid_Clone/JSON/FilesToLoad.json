@@ -1,0 +1,6 @@
+{
+    "sprites": ["../JSON/Textures.json"],
+  "levelsCommon": [ "../JSON/LevelsCommon.json" ],
+  "inputs": ["../JSON/InputSettings.json" ],
+  "levels": [ "../JSON/Test_01.json" ]
+}

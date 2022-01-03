@@ -1,0 +1,79 @@
+{
+    "redblock_1": {
+        "spriteSheet":"../Img/textures.png",
+        "x":0,
+        "y":0,
+        "w":12,
+        "h":6
+        },
+    "redblock_2": {
+        "spriteSheet":"../Img/textures.png",
+        "x":14,
+        "y":0,
+        "w":12,
+        "h":6
+        },
+    "redblock_3": {
+        "spriteSheet":"../Img/textures.png",
+        "x":28,
+        "y":0,
+        "w":12,
+        "h":6
+        },
+    "redblock_4": {
+        "spriteSheet":"../Img/textures.png",
+        "x":42,
+        "y":0,
+        "w":12,
+        "h":6
+        },
+    "greenblock_1": {
+        "spriteSheet":"../Img/textures.png",
+        "x":0,
+        "y":8,
+        "w":12,
+        "h":6
+        },
+    "greenblock_2": {
+        "spriteSheet":"../Img/textures.png",
+        "x":14,
+        "y":8,
+        "w":12,
+        "h":6
+        },
+    "greenblock_3": {
+        "spriteSheet":"../Img/textures.png",
+        "x":28,
+        "y":8,
+        "w":12,
+        "h":6
+        },
+    "greenblock_4": {
+        "spriteSheet":"../Img/textures.png",
+        "x":42,
+        "y":8,
+        "w":12,
+        "h":6
+        },
+    "ball": {
+        "spriteSheet":"../Img/textures.png",
+        "x":1,
+        "y":24,
+        "w":6,
+        "h":6
+    },
+  "wall": {
+    "spriteSheet": "../Img/textures.png",
+    "x": 1,
+    "y": 58,
+    "w": 100,
+    "h": 4
+  },
+  "player": {
+    "spriteSheet": "../Img/textures.png",
+    "x": 1,
+    "y": 58,
+    "w": 24,
+    "h": 4
+  }
+}
