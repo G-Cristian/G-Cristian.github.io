@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Computer Graphics</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<!-- Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<!-- Icon font -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="assets/css/styles.css">
+
+	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+
+	<header id="header">
+		<div id="head" class="parallax" parallax-speed="1">
+			<h1 id="logo" class="text-center">
+				<span class="title">Cristian</span>
+				<span class="tagline">
+					Software Developer<br>
+					<a href="">cristiangalli88@gmail.com</a>
+				</span>
+			</h1>
+		</div>
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<!--<li class="active"><a href="about.html">About</a></li>-->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="computer_graphics.html">Computer Graphics</a></li>
+								<li><a href="game_development.html">Game Development</a></li>
+								<!--<li><a href="single.html">Blog Post</a></li>-->
+							</ul>
+						</li>
+						<!--<li><a href="blog.html">Blog</a></li>-->
+					</ul>
+
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+	</header>
+
+	<main id="main">
+
+		<div class="container">
+
+			<div class="row topspace">
+
+				<!-- Article main content -->
+				<article class="col-sm-8 maincontent">
+					<header class="page-header">
+						<h1 class="page-title">Computer Graphics.</h1>
+					</header>
+
+					<h2>Octree-Selector</h2>
+					<p><img src="assets/images/Octree_selection_1.png" alt=""></p>
+					<blockquote>
+						Implementation of an Octree to partition a mesh and allow to select its AABB according to a given level. The vertices inside that box are painted int red.
+						The mesh is rendered using WebGL with lighting.
+						You can try it with the following <a href="Octree_Selection/index.html">link</a>.
+					</blockquote>
+					<h2>Lear OpenGL Exercises</h2>
+					<p>More computer graphics experiments from <a href="https://learnopengl.com/">https://learnopengl.com/</a></p>
+
+					<h3>Lighting</h3>
+					<p><img src="assets/images/LearnOpenGL_Lighting_01.gif" alt=""></p>
+					<blockquote>Implementation, in C++ and OpenGL, of a dark scene with different kinds of light (directional light, point light and spotlight) and, diffuse and specular texture maps.</blockquote>
+
+					<h2>K9ngine</h2>
+					<p>Implementation of a simple graphics engine in C++ and OpenGL. Used for implementing some computer graphics algorithms from the book Computer Graphics Programming in OpenGL with C++.</p>
+					<p><a href="https://github.com/G-Cristian/K9ngine/tree/development/K9ngine/K9ngineFramework">https://github.com/G-Cristian/K9ngine/tree/development/K9ngine/K9ngineFramework</a></p>
+
+					<h3>Soft Shadows</h3>
+					<p><img src="assets/images/SoftShadows_1.gif" alt=""></p>
+
+					<h3>Cube Map and Enviroment Mapping</h3>
+					<p><img src="assets/images/CubeMapAndEnvironmentMapping_1.gif" alt=""></p>
+
+					<h3>Normal and Bump Mapping</h3>
+					<p><img src="assets/images/Normal_Bump_Mapping_1.gif" alt=""></p>
+
+					<h2>Computer Graphics Experiments</h2>
+					<p>Implementation of some computer graphics algorithm in C++ from the book Fundamentals of Cumpoter Graphics. Implementations include: Ray Tracing, Implementation of GPU pipeline in software.</p>
+					<p><a href="https://github.com/G-Cristian/ComputerGraphics">https://github.com/G-Cristian/ComputerGraphics</a></p>
+
+					<h3>Ray Tracing</h3>
+					<p><img src="assets/images/Ray_Tracing_1.png" alt=""></p>
+					<blockquote>Generate a ray traced image in the CPU. The scene contains lighting, shadows and reflections.</blockquote>
+
+					<h3>GPU pipeline</h3>
+					<p><img src="assets/images/Texture_Map_Multisample_8.png" alt=""></p>
+					<blockquote>Implementation in the CPU of some steps of the GPU pipeline, and generate a textured model with multisampling.</blockquote>
+				</article>
+				<!-- /Article -->
+				<!-- Sidebar -->
+				<!--
+	<aside class="col-md-4 sidebar sidebar-left">
+
+		<div class="widget">
+			<h4>Lorem ipsum dolor sit</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, ratione delectus reiciendis nulla nisi pariatur molestias animi eos repellat? Vel.</p>
+		</div>
+		<div class="widget">
+			<h4>Lorem ipsum dolor sit</h4>
+			<ul>
+				<li><a href="">Lorem ipsum </a>dolor sit amet.</li>
+				<li>Nostrum, dolores labore tempore error.</li>
+				<li>Qui esse impedit vitae repellat.</li>
+				<li>Aliquam, laborum corporis molestiae nihil.</li>
+				<li>Voluptate, labore non adipisci nihil!</li>
+			</ul>
+		</div>
+
+	</aside>
+		-->
+				<!-- /Sidebar -->
+
+			</div>
+		</div>	<!-- /container -->
+
+	</main>
+
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 widget">
+					<h3 class="widget-title">Contact</h3>
+					<div class="widget-body">
+						<p>
+							<!-- +234 23 9873237<br>-->
+							<a href="mailto:#">cristiangalli88@gmail.com</a><br>
+							<br>
+							<!--234 Hidden Pond Road, Ashland City, TN 37015-->
+						</p>
+					</div>
+				</div>
+
+				<div class="col-md-3 widget">
+					<h3 class="widget-title">Follow me</h3>
+					<div class="widget-body">
+						<p class="follow-me-icons">
+							<!--<a href=""><i class="fa fa-twitter fa-2"></i></a>-->
+							<!--<a href=""><i class="fa fa-dribbble fa-2"></i></a>-->
+							<a href="https://github.com/G-Cristian?tab=repositories"><i class="fa fa-github fa-2"></i></a>
+							<a href="https://ar.linkedin.com/in/cristian-galli-65939a4b"><i class="fa fa-linkedin fa-2"></i></a>
+							<!--<a href=""><i class="fa fa-facebook fa-2"></i></a>-->
+						</p>
+					</div>
+				</div>
+				<!--
+				<div class="col-md-3 widget">
+					<h3 class="widget-title">Text widget</h3>
+					<div class="widget-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
+					</div>
+				</div>
+
+				<div class="col-md-3 widget">
+					<h3 class="widget-title">Form widget</h3>
+					<div class="widget-body">
+						<p>+234 23 9873237<br>
+							<a href="mailto:#">some.email@somewhere.com</a><br>
+							<br>
+							234 Hidden Pond Road, Ashland City, TN 37015
+						</p>
+					</div>
+				</div>
+				-->
+			</div> <!-- /row of widgets -->
+		</div>
+	</footer>
+
+	<footer id="underfooter">
+		<!--
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-6 widget">
+					<div class="widget-body">
+						<p>234 Hidden Pond Road, Ashland City, TN 37015 </p>
+					</div>
+				</div>
+
+				<div class="col-md-6 widget">
+					<div class="widget-body">
+						<p class="text-right">
+							Copyright &copy; 2014, Your awesome name here<br>
+							Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> </p>
+					</div>
+				</div>
+
+			</div> <!-- /row of widgets -->
+		</div>
+	</footer>
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/template.js"></script>
+</body>
+</html>
