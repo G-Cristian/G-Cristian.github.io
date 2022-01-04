@@ -119,25 +119,29 @@ var initOctree = function (meshVertices, octree, level, gl) {
         c8.back = octree.back;
         c8.meshIndices = [];
 
-        octree.children = [c1, c2, c3, c4, c5, c6, c7, c8];
-
-        for (var j = 0; j < octree.children.length; j++) {
-            octree.children[j].meshIndices = [];
+        //octree.children = [c1, c2, c3, c4, c5, c6, c7, c8];
+        var octreeChildrens = [c1, c2, c3, c4, c5, c6, c7, c8];
+        for (var j = 0; j < octreeChildrens.length; j++) {
+            //octree.children[j].meshIndices = [];
+            octreeChildrens[j].meshIndices = [];
             //var tmpVert = [];
             for (var i = 0; i < octree.meshIndices.length; i++) {
                 index = octree.meshIndices[i];
-                if (octree.children[j].left <= meshVertices[index * 3 + 0] && meshVertices[index * 3 + 0] <= octree.children[j].right &&
-                    octree.children[j].bottom <= meshVertices[index * 3 + 1] && meshVertices[index * 3 + 1] <= octree.children[j].top &&
-                    octree.children[j].back <= meshVertices[index * 3 + 2] && meshVertices[index * 3 + 2] <= octree.children[j].front) {
+                if (octreeChildrens[j].left <= meshVertices[index * 3 + 0] && meshVertices[index * 3 + 0] <= octreeChildrens[j].right &&
+                    octreeChildrens[j].bottom <= meshVertices[index * 3 + 1] && meshVertices[index * 3 + 1] <= octreeChildrens[j].top &&
+                    octreeChildrens[j].back <= meshVertices[index * 3 + 2] && meshVertices[index * 3 + 2] <= octreeChildrens[j].front) {
 
                     //tmpVert.push(meshVertices[index * 3 + 0]);
                     //tmpVert.push(meshVertices[index * 3 + 1]);
                     //tmpVert.push(meshVertices[index * 3 + 2]);
-                    octree.children[j].meshIndices.push(index);
+                    //octree.children[j].meshIndices.push(index);
+                    octreeChildrens[j].meshIndices.push(index);
                 }
             }
-
-            initOctree(meshVertices, octree.children[j], level - 1, gl);
+            if (octreeChildrens[j].meshIndices.length > 0) {
+                initOctree(meshVertices, octreeChildrens[j], level - 1, gl);
+                octree.children.push(octreeChildrens[j]);
+            }
         }
     }
 };

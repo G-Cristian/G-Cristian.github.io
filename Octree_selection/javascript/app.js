@@ -304,7 +304,7 @@ var RunDemo = function (vertexShaderText, fragmentShaderText, boxVertexShaderTex
     initBunnyModel();
 
     initBoxShadersAndProgram();
-    octree = createOctree(model.meshes[0].vertices, 5, gl);
+    octree = createOctree(model.meshes[0].vertices, 9, gl);
 
     var getMouseXY = function (canvas, event) {
         const rect = canvas.getBoundingClientRect();
@@ -386,7 +386,7 @@ var RunDemo = function (vertexShaderText, fragmentShaderText, boxVertexShaderTex
             octreeVisible = !octreeVisible;
         }
 
-        if (e.key >= '1' && e.key <= '5') {
+        if (e.key >= '1' && e.key <= '9') {
             octreeLevel = e.key - '1';
         }
     });
