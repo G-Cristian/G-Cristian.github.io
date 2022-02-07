@@ -9,6 +9,7 @@ var octree;
 var octreeLevel;
 var octreeVisible=true;
 var selectedVerticesIndices;
+var camera;
 
 var InitDemo = function () {
     loadTextResource("shaders/lighting_selection.vs", function (vsErr, vsText) {
@@ -55,12 +56,14 @@ var InitDemo = function () {
 };
 
 var RunDemo = function (vertexShaderText, fragmentShaderText, boxVertexShaderText, boxFragmentShaderText, modelObj) {
-    console.log("This is working");
+    //console.log("This is working");
     model = modelObj;
     octreeLevel = 3;
     selectedVerticesIndices = [];
 
     var canvas = document.getElementById('game-surface');
+    camera = createCamera(document.getElementById('game-surface'), [0.0, 0.0, 0.0,], 45.0 * Math.PI / 180.0, canvas.width / canvas.height, [0.0, 1.0, 0.0], 0.1, 1000.0, 0.6);
+
     var gl = canvas.getContext('webgl');
     if (!gl) {
         gl = canvas.getContext('experimental-webgl');
@@ -70,8 +73,8 @@ var RunDemo = function (vertexShaderText, fragmentShaderText, boxVertexShaderTex
     }
 
     var mWorld = new Float32Array(16);
-    var mView = new Float32Array(16);
-    var mProj = new Float32Array(16);
+    var mView = camera.view();
+    var mProj = camera.perspective();
 
     glMatrix.mat4.identity(mWorld);
     glMatrix.mat4.lookAt(mView, cameraPos, [0.0, 0.0, 0.0], [0.0, 1.0, 0.0]);
@@ -282,11 +285,11 @@ var RunDemo = function (vertexShaderText, fragmentShaderText, boxVertexShaderTex
 
     var draw = function(){
         var angle = 0;
+        mView = camera.view();
+        mProj = camera.perspective();
         var mNormal = new Float32Array(9);
 
         glMatrix.mat4.identity(mWorld);
-        glMatrix.mat4.lookAt(mView, cameraPos, [0.0, 0.0, 0.0], [0.0, 1.0, 0.0]);
-        glMatrix.mat4.perspective(mProj, 45.0 * Math.PI / 180.0, canvas.width / canvas.height, 0.1, 1000.0);
 
         glMatrix.mat3.identity(mNormal);
         glMatrix.mat3.mul(mNormal, mNormal, mWorld);
@@ -311,7 +314,7 @@ var RunDemo = function (vertexShaderText, fragmentShaderText, boxVertexShaderTex
         mouseX = event.clientX - rect.left
         mouseY = event.clientY - rect.top
 
-        console.log("MouseX: " + mouseX + " MouseY: " + mouseY);
+        //console.log("MouseX: " + mouseX + " MouseY: " + mouseY);
     };
 
     var screenToWorld = function (mView, mProj, x, y, zNDC, width, height) {
@@ -359,7 +362,7 @@ var RunDemo = function (vertexShaderText, fragmentShaderText, boxVertexShaderTex
         rayDir[1] = rayDir[1] / normRayDir;
         rayDir[2] = rayDir[2] / normRayDir;
 
-        console.log("Ray origin = " + cameraPos + " Ray dir = " + rayDir);
+        //console.log("Ray origin = " + cameraPos + " Ray dir = " + rayDir);
 
         //unpaint previous selected
         paintVertices(selectedVerticesIndices, 0);
@@ -369,11 +372,11 @@ var RunDemo = function (vertexShaderText, fragmentShaderText, boxVertexShaderTex
         if (interResult) {
             selectedVerticesIndices = interResult.tree.meshIndices;
             paintVertices(selectedVerticesIndices, 1);
-            console.log("Intersection. t = " + interResult.t + " Box = " + interResult.tree);
-            console.log("Box.left = " + interResult.tree.left + " Box.right= " + interResult.tree.right + " Box.top = " + interResult.tree.top + " Box.bottom= " + interResult.tree.bottom);
+            //console.log("Intersection. t = " + interResult.t + " Box = " + interResult.tree);
+            //console.log("Box.left = " + interResult.tree.left + " Box.right= " + interResult.tree.right + " Box.top = " + interResult.tree.top + " Box.bottom= " + interResult.tree.bottom);
         }
         else {
-            console.log("No intersection.");
+            //console.log("No intersection.");
         }
     };
 
@@ -392,6 +395,8 @@ var RunDemo = function (vertexShaderText, fragmentShaderText, boxVertexShaderTex
     });
 
     var loop = function () {
+        cameraPos = camera.position;
+
         gl.clearColor(0.75, 0.85, 0.8, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
